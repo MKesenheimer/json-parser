@@ -14,11 +14,11 @@ def parse(jsn, obj):
   print(jdict)
 
 if __name__ == "__main__":
-  parser = argparse.ArgumentParser(description="")
-  parser.add_argument('path', metavar='file.json', type=str, nargs="?", help='')
-  parser.add_argument('-f', '--file', dest='fpath', type=str, required=False, help='')
-  parser.add_argument('-j', '--json', dest='json', type=str, required=False, help='')
-  parser.add_argument('-o', '--object', dest='object', type=str, required=True, help='')
+  parser = argparse.ArgumentParser(description="Parse JSON objects on the command line")
+  parser.add_argument('path', metavar='JSON-file', type=str, nargs="?", help='Text file with JSON content')
+  parser.add_argument('-f', '--file', metavar='JSON-file', dest='fpath', type=str, required=False, help='Text file with JSON content')
+  parser.add_argument('-j', '--json', metavar='JSON-string', dest='json', type=str, required=False, help='JSON object as string')
+  parser.add_argument('-o', '--object', metavar='object', dest='object', type=str, required=True, help='Object to parse')
   args = parser.parse_args()
 
   if  args.path != None or args.fpath != None: 
